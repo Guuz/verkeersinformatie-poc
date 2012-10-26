@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	div#verkeersinfo
+		div#header
+			h1 ANWB verkeersinformatie
+		div.imagecontainer
+			div.basis_layer
+				img#basis_layer_i(width="196", alt="kaart", src="http://verkeerstatic-acc.anwb.nl/ANWBMap/anwb/staticmap?centerX=4.7776&centerY=52.3755&zoom=11&width=1045&height=1375&format=jpg&layers=OPENLR", border="0", title="kaart", height="224", name="basis_layer_i")
+		div#container
+			div#content
+				div.meldingen
+					h2 Meldingen: #{openlr.count}
+					p Totale lengte:&nbsp;
+						strong #{openlr.length} km
+					| <ul><li><span>&gt;</span><a href="/verkeer" target="_blank">Overzicht</a></li><li><span>&gt;</span><a href="/verkeer/nederland/verkeersinformatie,/verkeersverwachting/Komende-dagen.html" target="_blank">Verkeersverwachting</a></li></ul>
